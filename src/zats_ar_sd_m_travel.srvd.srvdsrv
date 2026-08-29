@@ -1,0 +1,16 @@
+@EndUserText.label: 'Travel processor scenario service definition'
+define service ZATS_AR_SD_M_TRAVEL {
+  expose ZATS_AR_M_TRAVEL_PROCESSOR    as Travel;
+  expose ZATS_AR_M_BOOKING_PROCESSOR   as Bookking;
+  expose ZATS_AR_M_BOOKSUPPL_PROCESSOR as Bookingsuppl;
+  expose /DMO/I_Agency                 as Agency;
+  expose /DMO/I_Customer               as Customer;
+  expose I_Currency                    as Currency;
+  expose /DMO/I_Carrier                as Carrier;
+  expose /DMO/I_Connection             as Connection;
+  expose /DMO/I_Flight                 as Flight;
+  expose /DMO/I_Supplement             as Supplement;
+  expose /DMO/I_SupplementText         as Supplementtext;
+  expose /DMO/I_Booking_Status_VH      as Bookstatus;
+  expose /DMO/I_Overall_Status_VH      as Overallstatus;
+}

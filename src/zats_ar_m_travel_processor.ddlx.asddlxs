@@ -1,0 +1,88 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo: { 
+               typeName: 'Travel Request',
+               typeNamePlural: 'Travel Request',
+               title:{ value: 'TravelId' },
+               description:{ value: 'Description' }
+//               imageurl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3mPHQ9Rj16C23LZd6RS04Dg7HwhZmOhtwML4XBrxv1Q&s=10'
+                }
+annotate entity ZATS_AR_M_TRAVEL_PROCESSOR
+    with 
+{
+@UI.facet: [
+    {
+     id: 'TravelId',
+     type:#COLLECTION,
+     label: 'General Information',
+     position: 10
+    },
+        {
+     id: 'moreinfo',
+     type:#IDENTIFICATION_REFERENCE,
+     parentId:'TravelId',
+     label: 'More Info',
+     position: 10
+    },
+        {
+     id: 'FieldGroup1',
+     type:#FIELDGROUP_REFERENCE,
+     parentId:'TravelId',
+     label: 'Dates Data',
+     targetQualifier: 'spiderman',
+     position: 20
+    },
+        {
+     id: 'FieldGroup2',
+     type:#FIELDGROUP_REFERENCE,
+     parentId:'TravelId',
+     label: 'Price Data',
+     targetQualifier: 'superman',
+     position: 30
+    },
+        {
+     id: 'ItemData',
+     type:#LINEITEM_REFERENCE,
+     label: 'Bookings',
+     position: 20,
+     targetElement: '_Booking'
+    }
+ ]
+@UI.selectionField: [{ position: 10 }]
+@UI.lineItem: [{ position: 10 , importance:  #HIGH }]
+@UI.identification: [{ position: 10 }]
+   TravelId;
+@UI.selectionField: [{ position: 20 }]
+@UI.lineItem: [{ position: 20 }]
+@UI.identification: [{ position: 20 }]
+   AgencyID;
+@UI.selectionField: [{ position: 30 }] 
+@UI.lineItem: [{ position: 30 }]  
+@UI.identification: [{ position: 30 }]
+   CustomerId;
+@UI.fieldGroup: [{ position:20, qualifier:'spiderman' }]
+   BeginDate;
+@UI.fieldGroup: [{ position:30, qualifier:'spiderman' }]   
+   EndDate;
+@UI.fieldGroup: [{ position:20, qualifier:'superman' }]
+   BookingFee;
+@UI.selectionField: [{ position: 40 }] 
+@UI.lineItem: [{ position: 40 }]
+@UI.fieldGroup: [{ position:10, qualifier:'superman' }]
+   TotalPrice;
+@UI.fieldGroup: [{ position:30, qualifier:'superman' }]
+  CurrencyCode;
+@UI.fieldGroup: [{ position:10, qualifier:'spiderman' }]
+   Description;
+@UI.selectionField: [{ position: 50 }]
+@UI.lineItem: [{ position: 50 , importance:  #HIGH, criticality: 'Minion' }]
+@UI.fieldGroup: [{ position:40, qualifier:'superman' }]
+   OverallStatus;
+   /* Associations */
+//   _Agency;
+//   _Booking;
+//   _Currency;
+//   _Customer;
+//   _Overallstatus;
+
+    
+}

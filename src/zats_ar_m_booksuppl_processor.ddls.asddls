@@ -2,6 +2,7 @@
 @EndUserText.label: 'processor Supplement'
 @Metadata.ignorePropagatedAnnotations: false
 @VDM.viewType: #CONSUMPTION
+@Metadata.allowExtensions: true
 define view entity ZATS_AR_M_BOOKSUPPL_PROCESSOR as projection on ZATS_AR_M_BOOKSUPPL
 {
     key TravelId,
@@ -11,6 +12,7 @@ define view entity ZATS_AR_M_BOOKSUPPL_PROCESSOR as projection on ZATS_AR_M_BOOK
     Price,
     CurrencyCode,
     LastChangedAt,
+
     /* Associations */
     _Booking: redirected to parent ZATS_AR_M_BOOKING_PROCESSOR,
     _product,

@@ -2,6 +2,7 @@
 @EndUserText.label: 'Booking processor'
 @Metadata.ignorePropagatedAnnotations: false
 @VDM.viewType: #CONSUMPTION
+@Metadata.allowExtensions: true
 define view entity ZATS_AR_M_BOOKING_PROCESSOR as projection on ZATS_AR_M_BOOKING
 {
     key TravelId,
@@ -15,9 +16,12 @@ define view entity ZATS_AR_M_BOOKING_PROCESSOR as projection on ZATS_AR_M_BOOKIN
     CurrencyCode,
     BookingStatus,
     LastChangedAt,
+    BookingStatusText,
+    CustomerName,
+    AirlineName,
     /* Associations */
     _Bookstatus,
-    _booksuppl : redirected to composition child ZATS_AR_M_BOOKSUPPL_PROCESSOR,
+    _Booksuppl : redirected to composition child ZATS_AR_M_BOOKSUPPL_PROCESSOR,
     _Carrier,
     _connection,
     _Currency,

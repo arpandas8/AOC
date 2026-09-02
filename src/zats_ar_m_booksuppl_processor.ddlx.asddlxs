@@ -1,0 +1,23 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZATS_AR_M_BOOKSUPPL_PROCESSOR
+    with 
+{
+//   TravelId;
+  @UI.lineItem: [{ position: 10 }]  
+   BookingId;
+  @UI.lineItem: [{ position: 20 }]     
+   BookingSupplementId;
+   @UI.lineItem: [{ position: 30 }]   
+   SupplementId;
+   @UI.lineItem: [{ position: 40 }]    
+   Price;
+
+//   CurrencyCode;
+//   LastChangedAt;
+//   /* Associations */
+//   _Booking;
+//   _product;
+//   _producttext;
+//   _Travel; element_name;
+    
+}

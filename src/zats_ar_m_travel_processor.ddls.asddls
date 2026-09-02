@@ -2,10 +2,11 @@
 @EndUserText.label: 'Root Entity Projection Layer'
 @Metadata.ignorePropagatedAnnotations: false
 @VDM.viewType: #COMPOSITE
+@Metadata.allowExtensions: true
 define root view entity ZATS_AR_M_TRAVEL_PROCESSOR as projection on ZATR_AR_M_TRAVEL
 {
     key TravelId,
-    AgencyId,
+    AgencyID,
     CustomerId,
     BeginDate,
     EndDate,
@@ -19,5 +20,9 @@ define root view entity ZATS_AR_M_TRAVEL_PROCESSOR as projection on ZATR_AR_M_TR
     _Booking: redirected to composition child ZATS_AR_M_BOOKING_PROCESSOR ,
     _Currency,
     _Customer,
-    _Overallstatus
+    _Overallstatus,
+    AgencyName,
+    CustomerName,
+    StatusText,
+    Minion 
 }
